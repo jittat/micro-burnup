@@ -108,11 +108,13 @@ function main() {
 	initStat();
 	$("#done").attr("disabled", false);
 	refreshChart();
+	$("#done").focus();
     });
 
     $("#done").click(function() {
 	addTimeStamp();
 	refreshChart();
+	$("#done").focus();
     });
 
     initStat();
