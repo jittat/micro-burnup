@@ -58,7 +58,7 @@ function refreshChart() {
     });
 
     var rangeOption = "0,0," + parseInt(maxTime / chartScale) + "|" +
-	"1,0," + (count+1);
+	"1,0," + parseInt(maxCount);
 
     $("#chart").attr("src",
 		     "http://chart.apis.google.com/chart?" +
