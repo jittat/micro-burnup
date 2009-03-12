@@ -1,8 +1,0 @@
-Micro Burn-up
-============
-
-This tiny app tracks the progress for your tasks consisting of a large
-number of micro tasks.  It uses jquery as a javascript library and
-uses Google Chart API for generating charts.
-
-This software is distributed under the MIT License.
