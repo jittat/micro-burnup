@@ -85,7 +85,7 @@ function addTimeStamp() {
 }
 
 function readVelocity() {
-    var v = parseInt($("#velocity").val());
+    var v = parseFloat($("#velocity").val());
     if(v==NaN)
 	v = 1;
     return v;
