@@ -28,6 +28,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 var startTime = null;
 var velocity = 1;
 var timestamps = null;
+var chartSize = "400x300";
 
 function refreshChart() {
     var chartScale = 1;
@@ -62,7 +63,7 @@ function refreshChart() {
 
     $("#chart").attr("src",
 		     "http://chart.apis.google.com/chart?" +
-		     "chs=400x300&" +
+		     "chs=" + chartSize + "&" +
 		     "cht=lxy&" + 
 		     "chd=t:" + dataX + "|" + dataY + "|" + 
 		     "0,100|0," + (expectedDone*100/maxCount).toFixed(1) + "&" +
@@ -115,6 +116,15 @@ function main() {
 	addTimeStamp();
 	refreshChart();
 	$("#done").focus();
+    });
+
+    $("input.chart-size").click(function() {
+	chartSize = this.value;
+	refreshChart();
+	if($("#done").attr("disabled")==false)
+	    $("#done").focus();
+	else
+	    $("#reset").focus();
     });
 
     initStat();
