@@ -65,7 +65,7 @@ function refreshChart() {
 		     "chs=400x300&" +
 		     "cht=lxy&" + 
 		     "chd=t:" + dataX + "|" + dataY + "|" + 
-		     "0,100|0," + (expectedDone*100/maxCount) + "&" +
+		     "0,100|0," + (expectedDone*100/maxCount).toFixed(1) + "&" +
 		     "chxt=x,y&" +
 		     "chxr=" + rangeOption + "&" +
 		     "chco=" + lineColor + ",707070&" + 
