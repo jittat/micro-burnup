@@ -29,6 +29,7 @@ var startTime = null;
 var velocity = 1;
 var timestamps = null;
 var chartSize = "400x300";
+var changeTimeout = null;
 
 function refreshChart() {
     var chartScale = 1;
@@ -102,6 +103,17 @@ function main() {
     $("#change").click(function() {
 	velocity = readVelocity();
 	refreshChart();
+	$("#velocity").focus();
+
+	// wait for 5 seconds before defocus change button
+	if(changeTimeout!=null)
+	    clearTimeout(changeTimeout);
+	changeTimeout = setTimeout(function() {
+	    if($("#done").attr("disabled")==false)
+		$("#done").focus();
+	    else
+		$("#reset").focus();
+	}, 5000);
     });
 
     $("#reset").click(function() {
@@ -129,6 +141,7 @@ function main() {
 
     initStat();
     refreshChart();
+    $("#reset").focus();
 }
 
 $(document).ready(main);
